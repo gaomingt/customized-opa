@@ -13,7 +13,7 @@ type Server struct {
 func NewServer(ctx context.Context) (*Server, error) {
 	server := &Server{
 		ctx:  ctx,
-		Port: 8080,
+		Port: 9090,
 	}
 	return server, nil
 }
