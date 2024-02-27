@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package cpa;
+option go_package = "./evaluationpb";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/type.proto";
+
+message EvaluationRequest{}
+message EvaluationResponse{}
+
+service EvaluationService {
+  rpc Evaluate(EvaluationRequest) returns (EvaluationResponse) {
+    option (google.api.http) = {
+      post: "evaluate",
+      body: "*"
+    };
+  }
+}
